@@ -3,12 +3,13 @@ package com.MyFirstApp.Student.student;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path="api")
+@RequestMapping(path="api/students")
 public class StudentController {
 
     private final StudentService studentService;
@@ -18,9 +19,14 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @GetMapping(path="/students")
+    @GetMapping
     public List<Student> getStudent() {
         return studentService.getStudent();
+    }
+
+    @PostMapping
+    public void registerNewStudent(Student student) {
+        studentService.addNewStudent(student);
     }
 
 }
