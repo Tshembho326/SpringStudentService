@@ -1,0 +1,77 @@
+package com.MyFirstApp.Student.student;
+
+import java.time.LocalDate;
+
+public class Student {
+    private Long id;
+    private int age;
+    private String email;
+    private String name;
+    private LocalDate dateOfBirth;
+
+    public Student() {
+    }
+
+    public Student(int age, String email, String name, LocalDate dateOfBirth) {
+        this.age = age;
+        this.email = email;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public Student(Long id, int age, String email, String name, LocalDate dateOfBirth) {
+        this.id = id;
+        this.age = age;
+        this.email = email;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Student {id= "+ getId()+ "\n age= "
+                + getAge() + "\n name= " + getName() +
+                "\n email= " + getEmail() + "\n Date of Birth= " +
+                getDateOfBirth() + "}";
+    }
+}
